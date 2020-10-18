@@ -28,21 +28,15 @@ class JsonGenerator{
 
 
 
+
+
+
+
     async dynamicJson(req,res){
-        const {data, field } = req.body
+        const {field, data } = req.body
         try{
-        let randomArr = []
-        data.forEach(e => randomArr.push(e))
-        console.log(data)
-        const chooseAValue = Math.floor(Math.random() * randomArr.length)
-        
-    //    const t =  JSON.stringify(`'{ "${field}" : "${randomArr[chooseAValue]}"}'`)
-            const t = '{"'+field+'":"'+randomArr[chooseAValue]+'"}'
-       const t2 = JSON.parse(t)
-      
-      
-       console.log(t2)
-        return res.json(t2)
+            field.forEach((e,i)=> console.log('field: ',e, data[i]))
+            return res.json('ok')
         }catch(err){
             console.log(err)
         }

@@ -7,7 +7,7 @@ import JsonGenerator from '../controller/jsonGeneratorController'
   routes.get('/',JsonGenerator.healthCheck);
 
   routes.post('/random',JsonGenerator.generateJson);
-  // routes.post('/random2',JsonGenerator.generateJson2);
+  routes.post('/random2',JsonGenerator.dynamicJson);
 
 
 
